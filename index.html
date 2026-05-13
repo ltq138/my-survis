@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurVis - Container Terminal Forecasting</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .paper { border: 1px solid #ccc; margin: 10px; padding: 10px; border-radius: 5px; }
+        .year { background: #2c7bb6; color: white; display: inline-block; padding: 2px 6px; border-radius: 3px; }
+        .keywords { margin-top: 5px; }
+        .keyword { background: #eee; display: inline-block; padding: 2px 5px; margin: 2px; border-radius: 3px; font-size: 0.8em; }
+        .filter-bar { margin-bottom: 20px; }
+        button { margin: 2px; padding: 5px 10px; cursor: pointer; }
+        .active { background-color: #2c7bb6; color: white; }
+    </style>
+</head>
+<body>
+    <h1>SurVis: Literature Collection</h1>
+    <p>Machine Learning Approaches for Container Terminal Forecasting (10 papers)</p>
+    <div class="filter-bar">
+        <strong>Filter by keyword:</strong>
+        <div id="keyword-buttons"></div>
+        <button id="show-all">Show All</button>
+    </div>
+    <div id="papers-list"></div>
+
+    <script>
+        let allPapers = [];
+        let currentFilter = null;
+
+        function renderPapers(papers) {
+            const container = document.getElementById('papers-list');
+            container.innerHTML = '';
+            for (const p of papers) {
+                const div = document.createElement('div');
+                div.className = 'paper';
+                div.innerHTML = `
+                    <div><strong>${p.title}</strong></div>
+                    <div>${p.author} (${p.year})</div>
+                    <div>DOI: <a href="https://doi.org/${p.doi}" target="_blank">${p.doi}</a></div>
+                    <div class="keywords">${p.keywords.map(k => `<span class="keyword">${k}</span>`).join('')}</div>
+                `;
+                container.appendChild(div);
+            }
+        }
+
+        function buildKeywordButtons(papers) {
+            const keywordsSet = new Set();
+            papers.forEach(p => p.keywords.forEach(k => keywordsSet.add(k)));
+            const btnContainer = document.getElementById('keyword-buttons');
+            btnContainer.innerHTML = '';
+            for (const kw of Array.from(keywordsSet).sort()) {
+                const btn = document.createElement('button');
+                btn.textContent = kw;
+                btn.onclick = () => {
+                    currentFilter = kw;
+                    const filtered = allPapers.filter(p => p.keywords.includes(kw));
+                    renderPapers(filtered);
+                    document.querySelectorAll('#keyword-buttons button').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                };
+                btnContainer.appendChild(btn);
+            }
+        }
+
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                allPapers = data.entries;
+                renderPapers(allPapers);
+                buildKeywordButtons(allPapers);
+                document.getElementById('show-all').onclick = () => {
+                    currentFilter = null;
+                    renderPapers(allPapers);
+                    document.querySelectorAll('#keyword-buttons button').forEach(b => b.classList.remove('active'));
+                };
+            })
+            .catch(err => console.error('Failed to load data.json', err));
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "entries": [
+    {
+      "title": "A systematic review and bibliometric analysis of recent studies on container throughput forecasting",
+      "author": "Gohari, A. and others",
+      "year": 2025,
+      "doi": "10.46754/jml.2025.08.006",
+      "keywords": ["literature-survey", "bibliometric-analysis"]
+    },
+    {
+      "title": "Predicting port congestion at Busan Port using machine learning algorithms and temporal variables",
+      "author": "Ha, Sang-Hyun, Kim, Ki-Hwan, Kang, Young-Jin, Kim, Ji Yeon, Jeong, Seok-Chan",
+      "year": 2025,
+      "doi": "10.1109/ICAIIC64266.2025.10920669",
+      "keywords": ["port-congestion", "machine-learning"]
+    },
+    {
+      "title": "Container terminal daily gate in and gate out forecasting using machine learning methods",
+      "author": "Jin, Jiahuan, Ma, Mingyu, Jin, Huan, Cui, Tianxiang, Bai, Ruibin",
+      "year": 2022,
+      "doi": "10.1016/j.tranpol.2022.11.010",
+      "keywords": ["gate-forecasting", "machine-learning", "xgboost"]
+    },
+    {
+      "title": "A decomposed-ensemble prediction framework for gate-in operations at container terminals",
+      "author": "Jin, J. and others",
+      "year": 2025,
+      "doi": "10.3390/jmse13010045",
+      "keywords": ["gate-forecasting", "deep-learning", "lstm"]
+    },
+    {
+      "title": "Daily container volume throughput forecasting at container terminal using long-short term memory (LSTM) recurrent neural network",
+      "author": "Kasanah, Yulinda Uswatun, Arifin, Miftahol, Winati, Famila Dwi, Fatbayani",
+      "year": 2025,
+      "doi": "10.37339/e-komtek.v9i1.2214",
+      "keywords": ["deep-learning", "lstm", "throughput-forecasting"]
+    },
+    {
+      "title": "Application of large language models for container throughput forecasting",
+      "author": "Kim, M. and others",
+      "year": 2026,
+      "doi": "10.48550/arXiv.2602.20489",
+      "keywords": ["llm", "emerging-methods"]
+    },
+    {
+      "title": "Forecasting container gate-outs based on import container dwell time distribution estimation using Bayesian network and yard storage data",
+      "author": "Park and others",
+      "year": 2025,
+      "doi": "10.2139/ssrn.5084657",
+      "keywords": ["bayesian-network", "gate-forecasting", "uncertainty"]
+    },
+    {
+      "title": "Advancing container shipping with machine learning: a bibliometric analysis and systematic review of seaport--hinterland studies",
+      "author": "Rodrigues, T. D. A. and others",
+      "year": 2026,
+      "doi": "10.1080/00207543.2026.2625243",
+      "keywords": ["literature-survey", "bibliometric-analysis"]
+    },
+    {
+      "title": "Advancements in deep learning techniques for time series forecasting in maritime applications: A comprehensive review",
+      "author": "Wang, M. and others",
+      "year": 2024,
+      "doi": "10.3390/info15080507",
+      "keywords": ["deep-learning", "literature-survey"]
+    },
+    {
+      "title": "DTGCN: A dynamic temporal graph convolutional network for container throughput forecasting",
+      "author": "Xu, S. and Zeng, F.",
+      "year": 2024,
+      "doi": "10.2139/ssrn.4862036",
+      "keywords": ["graph-neural-network", "emerging-methods"]
+    }
+  ]
+}
